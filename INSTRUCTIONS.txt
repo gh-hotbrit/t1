@@ -1,0 +1,21 @@
+Create repository
+public
+readme
+
+add index.html
+
+
+Click the Settings tab located near the top right of your repository's navigation bar.
+Look at the left-hand sidebar menu, scroll to the "Code and automation" section, and click Pages.
+Under the Build and deployment section, look for the Source dropdown menu.
+Ensure it is set to Deploy from a branch.
+Under Branch, change the dropdown selection from None to main (or master), leave the folder as /root, and click Save.
+
+Visit Your Live Site
+=====================
+Wait roughly 1 to 2 minutes for GitHub to process and build the files in the background.
+Refresh the Pages settings screen.
+You will see a live notification at the top of the section stating: "Your site is live at..." accompanied by your custom URL.
+
+
+likely https://<username>.github.io/<repo>/
