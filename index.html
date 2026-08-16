@@ -6,14 +6,31 @@
 <title>Hot</title>
 </head>
 <body>
+<!--
 <script src="sl.js"></script>
+-->
 <script>
+
+
+
+function LoadJS(scriptName) {
+	var jsitem=document.createElement('script');
+	jsitem.type = 'text/javascript';
+	jsitem.src = scriptName;
+	jsitem.onload = function () {
+					document.head.appendChild(jsitem);
+					console.log ("Loaded module: " + scriptName);
+	};
+	jsitem.onerror = function () {
+					console.log ("Error loading " + scriptName);
+	};
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("The DOM is fully parsed and ready!");
-    
+	LoadJS("sl.js");
 	console.log(sl[0]);
-	
 	
 });
 
