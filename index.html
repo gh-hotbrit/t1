@@ -13,25 +13,29 @@
 
 
 
-function LoadJS(scriptName) {
+function LoadJS(scriptName, callback) {
 	var jsitem=document.createElement('script');
 	jsitem.type = 'text/javascript';
 	jsitem.src = scriptName;
 	jsitem.onload = function () {
-					document.head.appendChild(jsitem);
-					console.log ("Loaded module: " + scriptName);
+		console.log ("Loaded module: " + scriptName);
+		console.log(sl[0]);
+		callback();
 	};
 	jsitem.onerror = function () {
-					console.log ("Error loading " + scriptName);
+		console.log ("Error loading " + scriptName);
 	};
+	document.head.appendChild(jsitem);
 }
 
+function LoadedSl() {
+		console.log(sl[0]);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("The DOM is fully parsed and ready!");
-	LoadJS("sl.js");
-	console.log(sl[0]);
-	
+	LoadJS("sl.js", LoadedSl);
+		
 });
 
 </script>
