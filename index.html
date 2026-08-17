@@ -6,11 +6,12 @@
 <title>Hot</title>
 </head>
 <body>
-<!--
-<script src="sl.js"></script>
--->
+
 <script>
 
+const urlParams = new URLSearchParams(window.location.search);
+const op = urlParams.get('o');
+const n = urlParams.get('n');
 
 
 function LoadJS(scriptName, callback) {
@@ -19,7 +20,6 @@ function LoadJS(scriptName, callback) {
 	jsitem.src = scriptName;
 	jsitem.onload = function () {
 		console.log ("Loaded module: " + scriptName);
-		console.log(sl[0]);
 		callback();
 	};
 	jsitem.onerror = function () {
@@ -32,10 +32,10 @@ function LoadedSl() {
 		console.log(sl[0]);
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("The DOM is fully parsed and ready!");
-	LoadJS("sl.js", LoadedSl);
-		
+	LoadJS(op + ".js", LoadedSl);
 });
 
 </script>
